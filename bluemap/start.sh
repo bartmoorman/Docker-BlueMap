@@ -1,0 +1,5 @@
+#!/bin/bash
+exec $(which java) \
+    -jar /opt/bluemap/BlueMap-*-cli.jar \
+    --render \
+    --webserver
