@@ -19,6 +19,7 @@ RUN apt-get update \
  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY bluemap/ /etc/bluemap/
+COPY bin/ /usr/local/bin/
 
 VOLUME /var/lib/bluemap
 
