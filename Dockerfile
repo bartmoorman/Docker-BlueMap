@@ -7,8 +7,8 @@ WORKDIR /var/lib/bluemap
 
 RUN apt-get update \
  && apt-get install --yes --no-install-recommends \
+    default-jre-headless \
     jq \
-    openjdk-8-jre-headless \
     vim \
     wget \
  && fileUrl=$(curl --silent --location "https://api.github.com/repos/BlueMap-Minecraft/BlueMap/releases/latest" | jq --raw-output '.assets[] | select(.name | endswith("cli.jar")) | .browser_download_url') \
