@@ -33,3 +33,4 @@ volumes:
 |Variable|Description|Default|
 |--------|-----------|-------|
 |TZ|Sets the timezone|`America/Denver`|
+|BLUEMAP_ARGS|Sets custom args passed to BlueMap|`<empty>`|
