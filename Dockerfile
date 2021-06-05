@@ -11,7 +11,7 @@ RUN apt-get update \
     jq \
     vim \
     wget \
- && fileUrl=$(curl --silent --location "https://api.github.com/repos/BlueMap-Minecraft/BlueMap/releases/latest" | jq --raw-output '.assets[] | select(.name | endswith("cli.jar")) | .browser_download_url') \
+ && fileUrl=$(curl --silent --location "https://api.github.com/repos/BlueMap-Minecraft/BlueMap/releases" | jq --raw-output '.[0].assets[] | select(.name | endswith("cli.jar")) | .browser_download_url') \
  && wget --quiet --directory-prefix /opt/bluemap "${fileUrl}" \
  && apt-get autoremove --yes --purge \
  && apt-get clean \
