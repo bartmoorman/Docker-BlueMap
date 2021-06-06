@@ -1,7 +1,8 @@
 FROM bmoorman/ubuntu:bionic
 
-ARG DEBIAN_FRONTEND=noninteractive \
-    BLUEMAP_PORT=8100
+ARG DEBIAN_FRONTEND=noninteractive
+
+ENV BLUEMAP_PORT=8100
 
 WORKDIR /var/lib/bluemap
 
@@ -25,3 +26,5 @@ VOLUME /var/lib/bluemap
 EXPOSE ${BLUEMAP_PORT}
 
 CMD ["/etc/bluemap/start.sh"]
+
+HEALTHCHECK --interval=60s --timeout=5s CMD curl --insecure --silent --show-error --fail "http://localhost:${BLUEMAP_PORT}/" || exit 1
