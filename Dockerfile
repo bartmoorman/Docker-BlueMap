@@ -1,4 +1,4 @@
-FROM bmoorman/ubuntu:focal
+FROM bmoorman/ubuntu:jammy
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -8,7 +8,7 @@ WORKDIR /var/lib/bluemap
 
 RUN apt-get update \
  && apt-get install --yes --no-install-recommends \
-    default-jre-headless \
+    openjdk-19-jre-headless \
     jq \
     vim \
     wget \
