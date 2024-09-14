@@ -8,7 +8,7 @@ WORKDIR /var/lib/bluemap
 
 RUN apt-get update \
  && apt-get install --yes --no-install-recommends \
-    openjdk-19-jre-headless \
+    openjdk-21-jre-headless \
     jq \
     vim \
     wget \
