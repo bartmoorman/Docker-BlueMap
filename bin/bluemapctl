@@ -1,2 +1,2 @@
 #!/bin/bash
-exec $(which java) -jar /opt/bluemap/BlueMap-*-cli.jar ${@}
+exec $(which java) -jar /opt/bluemap/blueMap-*-cli.jar ${@}
